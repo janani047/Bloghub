@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlogHub - Student Blogging Platform</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+
+            <a class="navbar-brand fw-bold" href="#">
+🚀 BlogHub Pro
+</a>
+
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">
+                            Login
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="register.html">
+                            Register
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html">
+                            Profile
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <button class="btn btn-warning ms-2" onclick="toggleDarkMode()">
+                            🌙 Dark Mode
+                        </button>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+
+    <section class="hero">
+
+<div class="container text-center">
+
+<h1 class="display-2 fw-bold">
+🚀 BlogHub Pro
+</h1>
+
+<p class="lead mt-3">
+Create • Share • Inspire
+</p>
+
+<p class="hero-subtitle">
+The Next Generation Student Blogging Platform
+</p>
+
+<a href="#blogContainer"
+class="btn btn-warning btn-lg mt-3 me-2">
+Explore Blogs
+</a>
+
+<a href="register.html"
+class="btn btn-light btn-lg mt-3">
+Join Now
+</a>
+
+</div>
+
+</section>
+<section class="container mt-5">
+
+<div class="row g-4">
+
+<div class="col-md-3">
+
+<div class="card text-center p-4 shadow">
+
+<h2>✍️</h2>
+
+<h5>Create Blogs</h5>
+
+<p>Publish your ideas instantly</p>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card text-center p-4 shadow">
+
+<h2>❤️</h2>
+
+<h5>Like Posts</h5>
+
+<p>Engage with content</p>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card text-center p-4 shadow">
+
+<h2>💬</h2>
+
+<h5>Comments</h5>
+
+<p>Interact with writers</p>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card text-center p-4 shadow">
+
+<h2>🌙</h2>
+
+<h5>Dark Mode</h5>
+
+<p>Modern user experience</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<section class="container mt-5">
+
+<div class="row text-center">
+
+<div class="col-md-4">
+
+<div class="card p-4">
+
+<h1>500+</h1>
+
+<h5>Published Blogs</h5>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card p-4">
+
+<h1>200+</h1>
+
+<h5>Registered Users</h5>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card p-4">
+
+<h1>1000+</h1>
+
+<h5>Comments Posted</h5>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+    <!-- Search -->
+
+    <div class="container mt-5">
+
+        <div class="row">
+
+            <div class="col-md-12">
+
+                <input type="text"
+                       id="searchInput"
+                       class="form-control"
+                       placeholder="Search Blogs..."
+                       onkeyup="searchBlog()">
+
+            </div>
+
+        </div>
+
+    </div>
+    <section class="container mt-5">
+
+<h2 class="text-center text-white mb-4">
+
+🔥 Trending Blogs
+
+</h2>
+
+<div class="row">
+
+<div class="col-md-4">
+
+<div class="card p-3 shadow">
+
+<h5>AI Revolution</h5>
+
+<p>Future of Artificial Intelligence</p>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card p-3 shadow">
+
+<h5>Web Development</h5>
+
+<p>Learn HTML CSS JS</p>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card p-3 shadow">
+
+<h5>Student Life</h5>
+
+<p>Tips and Productivity</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+    <!-- Create Blog -->
+
+    <div class="container mt-4">
+
+        <div class="card shadow p-4">
+
+            <h3>Create Blog</h3>
+
+            <input type="text"
+                   id="title"
+                   class="form-control mb-3"
+                   placeholder="Blog Title">
+
+            <textarea id="content"
+                      rows="5"
+                      class="form-control mb-3"
+                      placeholder="Write your blog..."></textarea>
+
+            <button class="btn btn-primary"
+                    onclick="addBlog()">
+                Publish Blog
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- Blog List -->
+
+    <div class="container mt-5">
+
+        <h2 class="mb-4">
+            Recent Blogs
+        </h2>
+
+        <div id="blogContainer"></div>
+
+    </div>
+
+    <!-- Footer -->
+
+    <footer class="bg-dark text-white text-center p-5 mt-5">
+
+<h3>
+🚀 BlogHub Pro
+</h3>
+
+<p>
+A Modern Blogging Platform
+for Students and Developers
+</p>
+
+<p>
+Built with HTML, CSS,
+JavaScript & Bootstrap
+</p>
+
+<hr>
+
+<p>
+© 2026 BlogHub Pro
+All Rights Reserved
+</p>
+
+</footer>
+
+    <script src="blog.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<button id="topBtn">
+
+⬆
+
+</button>
+</body>
+
+</html>
